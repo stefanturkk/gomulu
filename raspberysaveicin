@@ -1,0 +1,15 @@
+import serial
+
+def main():
+    ser = serial.Serial('/dev/rfcomm0', 115200, timeout=1)  # Open Bluetooth serial port
+    IMAGE_SIZE = 320 * 240 * 2  # Example for QVGA RGB565 image size
+    
+    while True:
+        data = ser.read(IMAGE_SIZE)
+        if len(data) == IMAGE_SIZE:
+            with open('captured_image.bmp', 'wb') as f:
+                f.write(data)
+                print("Image saved to captured_image.bmp")
+
+if __name__ == '__main__':
+    main()
