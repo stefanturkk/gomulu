@@ -1,0 +1,7 @@
+bluetoothctl
+agent on
+default-agent
+scan on
+pair <MAC_ADDRESS_OF_HC-05>
+trust <MAC_ADDRESS_OF_HC-05>
+connect <MAC_ADDRESS_OF_HC-05>
